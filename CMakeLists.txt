@@ -16,14 +16,6 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 # Set enable output of compile commands during generation
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# Includes
-include_directories(Includes)
-include_directories(Libraries)
-include_directories(Libraries/googletest/googletest/include)
-
-# Compile options
-include(CMake/CompileOptions.cmake)
-
 # Build type - Release by default
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
@@ -31,6 +23,11 @@ endif()
 
 # Overrides
 set(CMAKE_MACOSX_RPATH ON)
+
+# Includes
+include_directories(Includes)
+include_directories(Libraries)
+include_directories(Libraries/googletest/googletest/include)
 
 # Project modules
 set(BUILD_GTEST ON CACHE BOOL "" FORCE)
