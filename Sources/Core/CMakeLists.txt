@@ -2,17 +2,17 @@
 set(target CubbyRender)
 
 # Define
-set(root_dir ${CMAKE_CURRENT_SOURCE_DIR}/..)
+set(root_dir ${CMAKE_CURRENT_SOURCE_DIR}/../..)
 
 # Includes
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_CURRENT_SOURCE_DIR}/../Libraries
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Libraries
 )
 
 # Sources
 file(GLOB header_dir
-    ${root_dir}/Includes)
+    ${root_dir}/Includes/Core)
 
 file(GLOB_RECURSE headers
     ${header_dir}/*.h)
