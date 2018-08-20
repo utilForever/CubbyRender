@@ -10,54 +10,10 @@ Currently tested platforms are Ubuntu (14.04 or later) and Windows (Visual Studi
 
 ## Features
 
-### Productivity Features
-
-- Simple, easy to use OO interface designed to minimise the effort required to render 3D scenes, and to be independent of 3D implementation i.e. Direct3D/OpenGL.
-- Extensible example framework makes getting your application running is quick and Simple
-- Clean, uncluttered design and full documentation of all engine classes
-
-### Platform & 3D API support
-
-- Direct3D 11, Direct3D 12, OpenGL 4+ and Vulkan support
-- Windows (all major versions), Linux, Mac OSX support
-- Builds on various compilers such as MSVC, g++, and clang
-
-### Material / Shader support
-
-- Supports vertex and fragment programs (shaders), both low-level programs written in assembler, and high-level programs written in Cg, DirectX9 HLSL, or GLSL and provides automatic support for many commonly bound constant parameters like worldview matrices, light state information, object space eye position etc
-- Supports the complete range of fixed function operations such as multitexture and multipass blending, texture coordinate generation and modification, independent colour and alpha operations for non-programmable hardware or for lower cost materials
-- Load textures from PNG, JPEG, TGA, BMP or DDS files, including unusual formats like 1D textures, volumetric textures, cubemaps and compressed textures (DXT/S3TC)
-
-### Meshes
-
-- Flexible mesh data formats accepted, separation of the concepts of vertex buffers, index buffers, vertex declarations and buffer mappings
-- Biquadric Bezier patches for curved surfaces
-- Progressive meshes (LOD), manual or automatically generated
-
-### Animation
-
-- Sophisticated skeletal animation support
-- Flexible shape animation support
-
-### Scene Features
-
-- Highly customisable, flexible scene management, not tied to any single scene type. Use predefined classes for scene organisation if they suit or plug in your own subclass to gain full control over the scene organisation
-- Several example plugins demonstrate various ways of handling the scene specific to a particular type of layout (e.g. BSP, Octree)
-- Multiple shadow rendering techniques, both modulative and additive techniques, stencil and texture based, each highly configurable and taking full advantage of any hardware acceleration available
-
-### Special Effects
-
-- Compositor system, allowing for full-screen postprocessing effects to be defined easily, via scripts if desired
-- Particle Systems, including easily extensible emitters, affectors and renderers (customisable through plugins). Systems can be defined in text scripts for easy tweaking. Automatic use of particle pooling for maximum performance
-- Support for skyboxes, skyplanes and skydomes, very easy to use
-- Billboarding for sprite graphics
-
-### Misc features
-
-- Common resource infrastructure for memory management and loading from archives (ZIP, PK3)
-- Debugging memory manager for identifying memory leaks
-- XMLConverter to convert efficient runtime binary formats to/from XML for interchange or editing
-- Sample library + browser that showcases many features
+- Support Direct3D 11/12, OpenGL, Vulkan, Matal renderer
+- Support integrated shader language
+- Provide many tutorials and examples
+- C++, C# and Python API
 
 ## Documentation
 

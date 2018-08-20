@@ -13,6 +13,11 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 
+# Includes
+include_directories(Includes)
+include_directories(Libraries)
+include_directories(Libraries/googletest/googletest/include)
+
 # Set enable output of compile commands during generation
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
@@ -21,13 +26,11 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
+# Compile options 
+include(CMake/CompileOptions.cmake)
+
 # Overrides
 set(CMAKE_MACOSX_RPATH ON)
-
-# Includes
-include_directories(Includes)
-include_directories(Libraries)
-include_directories(Libraries/googletest/googletest/include)
 
 # Project modules
 set(BUILD_GTEST ON CACHE BOOL "" FORCE)
@@ -39,5 +42,5 @@ set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "" FORCE)
 add_subdirectory(Libraries/googlebenchmark)
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
-add_subdirectory(Sources)
+add_subdirectory(Sources/Core)
 add_subdirectory(Tests/UnitTests)
