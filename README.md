@@ -1,6 +1,6 @@
 # CubbyRender
 
-<img src="https://github.com/utilForever/CubbyRender/blob/master/Logo.png" align="center" />
+<img src="https://github.com/utilForever/CubbyRender/blob/master/Logo.png" align="center" width=256 height=256 />
 
 CubbyRender is open-source, cross-platform rendering engine that supports DirectX 11/12, OpenGL and Vulkan.
 The code is built on C++17 and can be compiled with commonly available compilers such as g++, clang, and MSVC.
