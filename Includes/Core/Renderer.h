@@ -1,8 +1,13 @@
 #ifndef CUBBYRENDER_RENDERER_H
 #define CUBBYRENDER_RENDERER_H
 
-#include <Core/Export.h>
+#include <Core/Macros.h>
 
+#include <string>
+#include <vector>
+
+namespace CubbyRender
+{
 class CUBBYRENDER_EXPORT Renderer
 {
  public:
@@ -12,8 +17,11 @@ class CUBBYRENDER_EXPORT Renderer
     Renderer& operator=(const Renderer&) = delete;
     Renderer& operator=(Renderer&&) = delete;
 
+    std::vector<std::string> FindAvailableGraphicsAPIs();
+
  private:
     Renderer() = default;
 };
+}
 
 #endif
