@@ -17,7 +17,7 @@ class CUBBYRENDER_EXPORT Renderer
     Renderer& operator=(const Renderer&) = delete;
     Renderer& operator=(Renderer&&) = delete;
 
-    std::vector<std::string> FindAvailableGraphicsAPIs();
+    static std::vector<std::string> FindAvailableGraphicsAPIs();
 
  private:
     Renderer() = default;
