@@ -17,6 +17,9 @@ class GraphicsAPI
     // Converts the graphics API name into a specific filename
     static std::string GetAPIFilename(const char* apiName);
 
+    // Returns true if the specified API is available.
+    static bool IsAvailable(const char* apiFilename);
+
  protected:
     GraphicsAPI() = default;
 };
