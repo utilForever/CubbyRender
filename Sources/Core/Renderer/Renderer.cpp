@@ -24,11 +24,11 @@ namespace CubbyRender
 
         for (auto api : apiList)
         {
-            auto moduleName = GraphicsAPI::GetAPIFilename(api);
-            //if (Module::IsAvailable(moduleName.c_str()))
-            //{
-            //    result.emplace_back(api);
-            //}
+            auto apiName = GraphicsAPI::GetAPIFilename(api);
+            if (GraphicsAPI::IsAvailable(apiName.c_str()))
+            {
+                result.emplace_back(api);
+            }
         }
 
         return result;
