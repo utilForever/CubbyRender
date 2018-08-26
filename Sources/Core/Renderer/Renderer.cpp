@@ -1,3 +1,4 @@
+#include <Core/Platform/GraphicsAPI.h>
 #include <Core/Renderer/Renderer.h>
 
 namespace CubbyRender
@@ -23,7 +24,7 @@ namespace CubbyRender
 
         for (auto api : apiList)
         {
-            //auto moduleName = GraphicsAPI::GetAPIFilename(m);
+            auto moduleName = GraphicsAPI::GetAPIFilename(api);
             //if (Module::IsAvailable(moduleName.c_str()))
             //{
             //    result.emplace_back(api);

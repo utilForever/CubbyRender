@@ -17,7 +17,7 @@ class GraphicsAPI
     // Converts the graphics API name into a specific filename
     static std::string GetAPIFilename(const char* apiName);
 
- private:
+ protected:
     GraphicsAPI() = default;
 };
 }
