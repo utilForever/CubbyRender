@@ -10,9 +10,9 @@ Currently tested platforms are Ubuntu (14.04 or later) and Windows (Visual Studi
 
 ## Features
 
-- Support Direct3D 11/12, OpenGL, Vulkan, Matal renderer
+- Support Direct3D 11/12, OpenGL, Vulkan, Metal renderer
 - Support integrated shader language
-- Provide many tutorials and examples
+- Provides many tutorials and examples
 - C++, C# and Python API
 
 ## Documentation
@@ -21,7 +21,7 @@ TBA
 
 ## How To Contribute
 
-Contributions are always welcome, either reporting issues/bugs or forking the repository and then issuing pull requests when you have completed some additional coding that you feel will be beneficial to the main project. If you are interested in contributing in a more dedicated capacity, then please contact me.
+Contributions are always welcomed, either reporting issues/bugs or forking the repository and then issuing pull requests when you have completed some additional codes that you feel will be beneficial to the main project. If you are interested in contributing in a more dedicated capacity, then please contact me.
 
 ## Contact
 
