@@ -10,7 +10,7 @@ Currently tested platforms are Ubuntu (14.04 or later) and Windows (Visual Studi
 
 ## Features
 
-- Support Direct3D 11/12, OpenGL, Vulkan, Matal renderer
+- Support Direct3D 11/12, OpenGL, Vulkan, Metal renderer
 - Support integrated shader language
 - Provide many tutorials and examples
 - C++, C# and Python API
