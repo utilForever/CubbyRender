@@ -3,7 +3,7 @@
 
 namespace CubbyRender
 {
-    std::vector<std::string> Renderer::FindAvailableGraphicsAPIs()
+    std::vector<std::string> Renderer::FindGraphicsAPIs()
     {
         static const char* apiList[] =
         {
