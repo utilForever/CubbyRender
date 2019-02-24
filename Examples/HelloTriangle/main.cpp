@@ -1,6 +1,6 @@
 #include <Core/Renderer/Renderer.h>
 
-int main(int argc, char* argv[])
+int main()
 {
     auto rendererAPI = CubbyRender::Renderer::FindAvailableGraphicsAPIs();
 

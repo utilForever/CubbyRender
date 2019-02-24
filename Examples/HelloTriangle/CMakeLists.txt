@@ -19,6 +19,10 @@ set_target_properties(${target}
 )
 
 # Compile options
+if (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+    add_definitions(-D_USE_MATH_DEFINES) # for M_PI
+endif ()
+
 target_compile_options(${target}
     PRIVATE
 
@@ -29,14 +33,7 @@ target_compile_options(${target}
 )
 
 # Link libraries
-if (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
-    target_link_libraries(${target}
-        PRIVATE
-        ${DEFAULT_LINKER_OPTIONS}
-		CubbyRender)
-else()
-    target_link_libraries(${target}
-        PRIVATE
-        ${DEFAULT_LINKER_OPTIONS}
-        CubbyRender)
-endif()
+target_link_libraries(${target}
+    PRIVATE
+    ${DEFAULT_LINKER_OPTIONS}
+    CubbyRender)
