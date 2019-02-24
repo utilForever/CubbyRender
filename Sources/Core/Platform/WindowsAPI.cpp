@@ -1,5 +1,7 @@
 #include <Core/Platform/WindowsAPI.h>
 
+#include <stdexcept>
+
 namespace CubbyRender
 {
 static HMODULE LoadLibrarySafe(const char* apiName)
