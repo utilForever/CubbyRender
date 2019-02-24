@@ -1,8 +1,10 @@
-#include <Core/Renderer/Renderer.hpp>
+#include <Core/Utils/ExampleUtils.hpp>
+
+#include <string>
 
 int main()
 {
-    auto rendererAPI = CubbyRender::Renderer::FindAvailableGraphicsAPIs();
+    std::string rendererAPI = SelectRendererAPI();
 
     return EXIT_SUCCESS;
 }
