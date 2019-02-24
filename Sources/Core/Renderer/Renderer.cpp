@@ -1,5 +1,5 @@
-#include <Core/Platform/GraphicsAPI.h>
-#include <Core/Renderer/Renderer.h>
+#include <Core/Platform/GraphicsAPI.hpp>
+#include <Core/Renderer/Renderer.hpp>
 
 namespace CubbyRender
 {

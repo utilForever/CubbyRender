@@ -1,7 +1,7 @@
 #ifndef CUBBYRENDER_RENDERER_H
 #define CUBBYRENDER_RENDERER_H
 
-#include <Core/Utils/Macros.h>
+#include <Core/Utils/Macros.hpp>
 
 #include <string>
 #include <vector>

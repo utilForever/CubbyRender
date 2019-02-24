@@ -1,4 +1,4 @@
-#include <Core/Renderer/Renderer.h>
+#include <Core/Renderer/Renderer.hpp>
 
 int main()
 {

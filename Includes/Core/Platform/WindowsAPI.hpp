@@ -1,7 +1,7 @@
 #ifndef CUBBYRENDER_WINDOWS_API_H
 #define CUBBYRENDER_WINDOWS_API_H
 
-#include <Core/Platform/GraphicsAPI.h>
+#include <Core/Platform/GraphicsAPI.hpp>
 
 #include <Windows.h>
 
