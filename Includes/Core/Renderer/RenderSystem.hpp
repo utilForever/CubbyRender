@@ -17,6 +17,8 @@ class CUBBYRENDER_EXPORT RenderSystem
     RenderSystem& operator=(const RenderSystem&) = delete;
     RenderSystem& operator=(RenderSystem&&) = delete;
 
+    //! Returns the list of all available render system modules for the current
+    //! platform.
     static std::vector<std::string> FindModules();
 
  private:

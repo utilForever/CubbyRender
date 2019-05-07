@@ -14,10 +14,10 @@ class Module
     Module& operator=(const Module&) = delete;
     Module& operator=(Module&&) = delete;
 
-    // Converts the module name into a specific filename
+    //! Converts the module name into a specific filename
     static std::string GetModuleFilename(const char* moduleName);
 
-    // Returns true if the specified module is available.
+    //! Returns true if the specified module is available.
     static bool IsAvailable(const char* moduleFilename);
 
  protected:
