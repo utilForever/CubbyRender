@@ -1,13 +1,13 @@
-#include <Core/Renderer/Renderer.hpp>
+#include <Core/Renderer/RenderSystem.hpp>
 #include <Core/Utils/ExampleUtils.hpp>
 
 #include <iostream>
 
-std::string SelectRendererAPI()
+std::string GetSelectedRendererModule()
 {
     std::string rendererAPI;
 
-    auto apis = CubbyRender::Renderer::FindGraphicsAPIs();
+    auto apis = CubbyRender::RenderSystem::FindModules();
 
     if (apis.empty())
     {

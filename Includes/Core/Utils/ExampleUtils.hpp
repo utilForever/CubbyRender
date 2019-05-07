@@ -3,6 +3,6 @@
 
 #include <string>
 
-std::string SelectRendererAPI();
+std::string GetSelectedRendererModule();
 
 #endif
