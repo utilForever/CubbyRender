@@ -3,6 +3,7 @@
 
 #include <Core/Utils/Macros.hpp>
 
+#include <memory>
 #include <string>
 #include <vector>
 
@@ -20,6 +21,9 @@ class CUBBYRENDER_EXPORT RenderSystem
     //! Returns the list of all available render system modules for the current
     //! platform.
     static std::vector<std::string> FindModules();
+
+    //! Loads a new render system from the specified module.
+    static std::unique_ptr<RenderSystem> Load(std::string moduleName);
 
  private:
     RenderSystem() = default;

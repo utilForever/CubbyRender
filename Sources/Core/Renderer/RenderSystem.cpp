@@ -31,4 +31,11 @@ std::vector<std::string> RenderSystem::FindModules()
     return modules;
 }
 
+std::unique_ptr<RenderSystem> RenderSystem::Load(std::string moduleName)
+{
+    auto moduleFilename = Module::GetModuleFilename(moduleName.c_str());
+
+    return nullptr;
+}
+
 }  // namespace CubbyRender
