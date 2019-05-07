@@ -3,6 +3,6 @@
 
 #include <string>
 
-std::string GetSelectedRendererModule();
+std::string GetSelectedRendererModule(int argc, char* argv[]);
 
 #endif

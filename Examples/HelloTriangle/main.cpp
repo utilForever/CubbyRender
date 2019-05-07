@@ -4,9 +4,9 @@
 #include <memory>
 #include <string>
 
-int main()
+int main(int argc, char* argv[])
 {
-    std::string rendererAPI = GetSelectedRendererModule();
+    std::string rendererAPI = GetSelectedRendererModule(argc, argv);
 
     return EXIT_SUCCESS;
 }

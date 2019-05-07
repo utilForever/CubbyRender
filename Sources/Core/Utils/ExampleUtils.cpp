@@ -3,50 +3,58 @@
 
 #include <iostream>
 
-std::string GetSelectedRendererModule()
+std::string GetSelectedRendererModule(int argc, char* argv[])
 {
-    std::string rendererAPI;
+    std::string rendererModule;
 
-    auto apis = CubbyRender::RenderSystem::FindModules();
-
-    if (apis.empty())
+    if (argc > 1)
     {
-        throw std::runtime_error(
-            "No graphics APIs available on target platform");
-    }
-
-    if (apis.size() == 1)
-    {
-        rendererAPI = apis.front();
+        rendererModule = argv[1];
     }
     else
     {
-        while (rendererAPI.empty())
+        // Find available modules
+        auto modules = CubbyRender::RenderSystem::FindModules();
+
+        if (modules.empty())
         {
-            std::cout << "Select renderer: \n";
+            throw std::runtime_error(
+                "No renderer modules available on target platform");
+        }
 
-            std::size_t i = 0;
-            for (const auto& api : apis)
+        if (modules.size() == 1)
+        {
+            rendererModule = modules.front();
+        }
+        else
+        {
+            while (rendererModule.empty())
             {
-                std::cout << " " << (++i) << ".) " << api << '\n';
-            }
+                std::cout << "Select renderer: \n";
 
-            std::size_t select = 0;
-            std::cin >> select;
-            --select;
+                std::size_t i = 0;
+                for (const auto& api : modules)
+                {
+                    std::cout << " " << (++i) << ".) " << api << '\n';
+                }
 
-            if (select < apis.size())
-            {
-                rendererAPI = apis[select];
-            }
-            else
-            {
-                std::cerr << "Invalid input\n";
+                std::size_t select = 0;
+                std::cin >> select;
+                --select;
+
+                if (select < modules.size())
+                {
+                    rendererModule = modules[select];
+                }
+                else
+                {
+                    std::cerr << "Invalid input\n";
+                }
             }
         }
     }
 
-    std::cout << "Selected renderer: " << rendererAPI << '\n';
+    std::cout << "Selected renderer: " << rendererModule << '\n';
 
-    return rendererAPI;
+    return rendererModule;
 }
