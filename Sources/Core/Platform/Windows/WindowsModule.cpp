@@ -1,4 +1,4 @@
-#include <Core/Platform/WindowsAPI.hpp>
+#include <Core/Platform/Windows/WindowsModule.hpp>
 
 #include <stdexcept>
 
@@ -19,10 +19,10 @@ static HMODULE LoadLibrarySafe(const char* apiName)
     return module;
 }
 
-std::string GraphicsAPI::GetAPIFilename(const char* apiName)
+std::string Module::GetModuleFilename(const char* moduleName)
 {
     std::string s = "CubbyRender_";
-    s += apiName;
+    s += moduleName;
 #ifdef CUBBYRENDER_DEBUG
     s += "D";
 #endif
@@ -30,10 +30,10 @@ std::string GraphicsAPI::GetAPIFilename(const char* apiName)
     return s;
 }
 
-bool GraphicsAPI::IsAvailable(const char* apiFilename)
+bool Module::IsAvailable(const char* moduleFilename)
 {
     // Check if Windows DLL can be loaded properly
-    if (const auto handle = LoadLibrarySafe(apiFilename))
+    if (const auto handle = LoadLibrarySafe(moduleFilename))
     {
         FreeLibrary(handle);
         return true;
@@ -42,20 +42,21 @@ bool GraphicsAPI::IsAvailable(const char* apiFilename)
     return false;
 }
 
-WindowsAPI::WindowsAPI(const char* apiName)
+WindowsModule::WindowsModule(const char* apiName)
 {
-    m_module = LoadLibrarySafe(apiName);
+    // Open Windows DLL file
+    m_handle = LoadLibrarySafe(apiName);
 
     // Check if handle load is failed
-    if (!m_module)
+    if (!m_handle)
     {
         throw std::runtime_error("failed to load DLL: \"" +
                                  std::string(apiName) + "\"");
     }
 }
 
-WindowsAPI::~WindowsAPI()
+WindowsModule::~WindowsModule()
 {
-    FreeLibrary(m_module);
+    FreeLibrary(m_handle);
 }
-}
+}  // namespace CubbyRender
