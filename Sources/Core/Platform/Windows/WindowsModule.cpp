@@ -1,4 +1,5 @@
 #include <Core/Platform/Windows/WindowsModule.hpp>
+#include <Core/Utils/CoreUtils.hpp>
 
 #include <stdexcept>
 
@@ -40,6 +41,11 @@ bool Module::IsAvailable(const char* moduleFilename)
     }
 
     return false;
+}
+
+std::unique_ptr<Module> Module::Load(const char* moduleFilename)
+{
+    return MakeUnique<WindowsModule>(moduleFilename);
 }
 
 WindowsModule::WindowsModule(const char* apiName)
