@@ -34,6 +34,7 @@ std::vector<std::string> RenderSystem::FindModules()
 std::unique_ptr<RenderSystem> RenderSystem::Load(std::string moduleName)
 {
     auto moduleFilename = Module::GetModuleFilename(moduleName.c_str());
+    auto module = Module::Load(moduleFilename.c_str());
 
     return nullptr;
 }
