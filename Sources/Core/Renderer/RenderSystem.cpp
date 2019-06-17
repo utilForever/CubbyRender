@@ -48,7 +48,7 @@ static bool LoadRenderSystemBuildID(Module& module,
             "\"" +
             moduleFilename + "\"");
 
-    return (RenderSystemBuildID() == CUBBYRENDER_BUILD_ID);
+    return (RenderSystemBuildID() == GetBuildID());
 }
 
 std::unique_ptr<RenderSystem> RenderSystem::Load(
