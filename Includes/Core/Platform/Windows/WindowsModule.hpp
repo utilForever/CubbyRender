@@ -13,6 +13,8 @@ class WindowsModule : public Module
     WindowsModule(const char* moduleFilename);
     ~WindowsModule();
 
+    void* LoadProcedure(const char* procedureName) override;
+
  private:
     HMODULE m_handle = nullptr;
 };

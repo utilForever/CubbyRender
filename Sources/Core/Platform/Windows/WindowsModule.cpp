@@ -48,6 +48,13 @@ std::unique_ptr<Module> Module::Load(const char* moduleFilename)
     return MakeUnique<WindowsModule>(moduleFilename);
 }
 
+void* WindowsModule::LoadProcedure(const char* procedureName)
+{
+    // Get procedure address from library module and return it as raw-pointer
+    const auto procAddr = GetProcAddress(m_handle, procedureName);
+    return reinterpret_cast<void*>(procAddr);
+}
+
 WindowsModule::WindowsModule(const char* apiName)
 {
     // Open Windows DLL file
