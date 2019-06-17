@@ -6,6 +6,14 @@
 
 namespace CubbyRender
 {
+#ifdef _WIN32
+#define CUBBYRENDER_PROC_INTERFACE(RET, NAME, ARG_LIST) \
+    typedef RET(__cdecl* (NAME)) ARG_LIST
+#else
+#define CUBBYRENDER_PROC_INTERFACE(RET, NAME, ARG_LIST) \
+    typedef RET(*(NAME)) ARG_LIST
+#endif
+
 class Module
 {
  public:
