@@ -8,7 +8,7 @@ namespace CubbyRender
 {
 #ifdef _WIN32
 #define CUBBYRENDER_PROC_INTERFACE(RET, NAME, ARG_LIST) \
-    typedef RET(__cdecl* (NAME)) ARG_LIST
+    typedef RET(__cdecl*(NAME)) ARG_LIST
 #else
 #define CUBBYRENDER_PROC_INTERFACE(RET, NAME, ARG_LIST) \
     typedef RET(*(NAME)) ARG_LIST
@@ -31,6 +31,10 @@ class Module
 
     //! Returns the specified module or null if it is not available.
     static std::unique_ptr<Module> Load(const char* moduleFilename);
+
+    //! Returns a raw pointer to the specified procedure loaded from this
+    //! module.
+    virtual void* LoadProcedure(const char* procedureName) = 0;
 
  protected:
     Module() = default;
