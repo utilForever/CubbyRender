@@ -1,6 +1,8 @@
 #ifndef CUBBYRENDER_RENDER_SYSTEM_H
 #define CUBBYRENDER_RENDER_SYSTEM_H
 
+#include <Core/Platform/Module.hpp>
+#include <Core/Renderer/RenderSystemFlags.hpp>
 #include <Core/Utils/Macros.hpp>
 
 #include <memory>
@@ -23,7 +25,8 @@ class CUBBYRENDER_EXPORT RenderSystem
     static std::vector<std::string> FindModules();
 
     //! Loads a new render system from the specified module.
-    static std::unique_ptr<RenderSystem> Load(std::string moduleName);
+    static std::unique_ptr<RenderSystem> Load(
+        const RenderSystemDescriptor& renderSystemDesc);
 
  private:
     RenderSystem() = default;

@@ -31,9 +31,12 @@ std::vector<std::string> RenderSystem::FindModules()
     return modules;
 }
 
-std::unique_ptr<RenderSystem> RenderSystem::Load(std::string moduleName)
+std::unique_ptr<RenderSystem> RenderSystem::Load(
+    const RenderSystemDescriptor& renderSystemDesc)
 {
-    auto moduleFilename = Module::GetModuleFilename(moduleName.c_str());
+    // Load render system module
+    auto moduleFilename =
+        Module::GetModuleFilename(renderSystemDesc.moduleName.c_str());
     auto module = Module::Load(moduleFilename.c_str());
 
     return nullptr;
