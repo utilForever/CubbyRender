@@ -1,7 +1,6 @@
 #ifndef CUBBYRENDER_RENDER_SYSTEM_H
 #define CUBBYRENDER_RENDER_SYSTEM_H
 
-#include <Core/Platform/Module.hpp>
 #include <Core/Renderer/RenderSystemFlags.hpp>
 #include <Core/Utils/Macros.hpp>
 
